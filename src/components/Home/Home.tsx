@@ -6,7 +6,6 @@ import { categories } from '../../categories.ts';
 const Home = () => {
   return (
     <Container>
-      <h1 className="text-primary my-4">Сборник цитат</h1>
       <Row>
         <Col md={3} className="mb-4">
           <Nav className="flex-column">
@@ -19,7 +18,7 @@ const Home = () => {
           </Nav>
         </Col>
         <Col md={9}>
-          <h2 className="mt-5">All quotes</h2>
+          <h2 className="mt-0">All</h2>
           <QuoteList/>
         </Col>
       </Row>
