@@ -5,6 +5,7 @@ import { Col, Container, Nav, Row } from 'react-bootstrap';
 
 const CategoryQuotes = () => {
   const {category} = useParams<{ category: string }>();
+  const firstLetter = (string: string) => string.charAt(0).toUpperCase() + string.slice(1);
   return (
     <Container>
       <Row>
@@ -12,14 +13,17 @@ const CategoryQuotes = () => {
           <Nav className="flex-column">
             {categories.map(cat => (
               <Nav.Item key={cat.id}>
-                <Nav.Link as={Link} to={cat.id === 'all' ? '/' : `/category/${cat.id}`}>
+                <Nav.Link
+                  as={Link}
+                  to={cat.id === 'all' ? '/' : `/category/${cat.id}`}
+                >
                   {cat.title}</Nav.Link>
               </Nav.Item>
             ))}
           </Nav>
         </Col>
         <Col md={9}>
-          <h1>Quotes in category: {category}</h1>
+          <h1>{firstLetter(category || '')}</h1>
           <QuoteList category={category === 'all' ? '' : category}/>
         </Col>
       </Row>
