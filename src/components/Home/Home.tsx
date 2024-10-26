@@ -11,7 +11,10 @@ const Home = () => {
           <Nav className="flex-column">
             {categories.map(category => (
               <Nav.Item key={category.id}>
-                <Nav.Link as={Link} to={category.id === 'all' ? '/' : `/category/${category.id}`}>
+                <Nav.Link
+                  as={Link}
+                  to={category.id === 'all' ? '/' : `/category/${category.id}`}
+                >
                   {category.title}</Nav.Link>
               </Nav.Item>
             ))}
