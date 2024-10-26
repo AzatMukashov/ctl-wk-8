@@ -2,3 +2,11 @@
   font-weight: bold;
   color: #000 !important;
 }
+
+.a-link {
+  border-right: 2px solid #000 !important;
+}
+
+.a-link:last-child {
+  border-right: none !important;
+}
