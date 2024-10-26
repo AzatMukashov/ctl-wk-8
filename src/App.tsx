@@ -12,10 +12,10 @@ const App = () => {
       <div>
         <Navbar bg="primary" variant="dark" expand="lg">
           <Container>
-            <Navbar.Brand href="/">Сборник цитат</Navbar.Brand>
+            <Navbar.Brand href="/">Quotes central</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto">
+              <Nav className="ms-auto">
                 <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
                 <Nav.Link as={NavLink} to="/add-quote" end>Add quote</Nav.Link>
               </Nav>
