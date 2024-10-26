@@ -16,8 +16,8 @@ const App = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
-                <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
-                <Nav.Link as={NavLink} to="/add-quote" end>Add quote</Nav.Link>
+                <Nav.Link as={NavLink} to="/" end className='a-link'>Quotes</Nav.Link>
+                <Nav.Link as={NavLink} to="/add-quote" end className='a-link'>Submit new quote</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
