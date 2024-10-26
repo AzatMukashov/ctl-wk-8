@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Route, BrowserRouter as Router, Routes, NavLink } from 'react-router-dom';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import Home from './components/Home/Home.tsx';
+import AddQuote from './components/AddQuote/AddQuote.tsx';
+import EditQuote from './components/EditQuote/EditQuote.tsx';
+import CategoryQuotes from './components/CategoryQuotes/CategoryQuotes.tsx';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
+    <Router>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Navbar bg="primary" variant="dark" expand="lg">
+          <Container>
+            <Navbar.Brand href="/">Сборник цитат</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
+                <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
+                <Nav.Link as={NavLink} to="/add-quote" end>Add quote</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        <Container className="mt-4">
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/add-quote" element={<AddQuote/>}/>
+            <Route path="/edit-quote/:id" element={<EditQuote/>}/>
+            <Route path="/category/:category" element={<CategoryQuotes/>}/>
+          </Routes>
+        </Container>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </Router>
+  );
+};
 
 export default App
